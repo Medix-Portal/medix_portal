@@ -36,11 +36,10 @@ class Appointment {
     }
   }
 
-  static async find(id) {
+  static async find(id, userId) {
     try {
-      const query = 'SELECT * FROM appointments WHERE id = ?';
-      const { rows: [appointment] } = await knex.raw(query, [id]);
-      return appointment ? new Appointment(appointment) : null;
+      const result = await knex.raw(`SELECT * FROM appointments WHERE appointment_id = ? AND user_id = ?`, [id, userId]);
+      return result.rows[0];
     } catch (err) {
       console.error(err);
       return null;
