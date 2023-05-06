@@ -33,7 +33,8 @@ Router.get('/me', userController.showMe);
 Router.get('/doctors', doctorController.list);
 Router.get('/doctors/:id', doctorController.find);
 
-Router.get('/appointments', appointmentController.list)
+Router.get('/appointments', appointmentController.list);
+Router.get('/appointments/:id', appointmentController.find);
 
 // checkAuthentication middleware is applied to only to this route (and /logged-in-secret)
 Router.get('/logged-in-secret', checkAuthentication, (req, res) => {

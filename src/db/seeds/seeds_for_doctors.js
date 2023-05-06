@@ -19,7 +19,7 @@ exports.seed = async function(knex) {
     {name: 'Sophie Greenberg', specialty: 'Dermatology'},
     {name: 'Yasmin Amir', specialty: 'Dermatology'},
     {name: 'Krystal Mitchell', specialty: 'Dermatology'},
-     
+    {name: "John Smith", specialty: "Cardiology"},
   ]);
 
 };
