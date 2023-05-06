@@ -5,6 +5,7 @@ const Router = express.Router();
 
 Router.use(cookieSession({
   secret: process.env.SESSION_SECRET,
+  //keys: process.env.SESSION_SECRET,
   // By default, the cookie's lifetime is "session"
   // which means until we close the browser. We like this for now!
   // But in real life you'd set the cookie to expire,
