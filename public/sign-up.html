@@ -19,6 +19,7 @@
   <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- CSS Files -->
   <link id="pagestyle" href="../assets/css/soft-ui-dashboard.css?v=1.0.7" rel="stylesheet" />
+  <!-- <script type="module" src="./scripts/create.js"></script> -->
 </head>
 
 <body class="">
@@ -86,12 +87,9 @@
       
               </div>
               <div class="card-body">
-                <form role="form text-left">
+                <form id ="user" role="form text-left">
                   <div class="mb-3">
-                    <input type="text" class="form-control" placeholder="Name" aria-label="Name" aria-describedby="email-addon">
-                  </div>
-                  <div class="mb-3">
-                    <input type="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="email-addon">
+                    <input type="text" class="form-control" placeholder="Userame" aria-label="Username" aria-describedby="username-addon">
                   </div>
                   <div class="mb-3">
                     <input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password-addon">
@@ -173,10 +171,14 @@
       Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
     }
   </script>
+  
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="../assets/js/soft-ui-dashboard.min.js?v=1.0.7"></script>
+  <script type="module" src="./scripts/global.js"></script>
+  <script type="module" src="./scripts/create.js"></script>
+
 </body>
 
 </html>

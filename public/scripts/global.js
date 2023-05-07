@@ -28,14 +28,19 @@ const signupAndLoginHandler = async (url, form) => {
     form.reset();
     return alert('Something went wrong');
   }
-  window.location.assign('/user.html');
+  window.location.assign('/profile.html');
 };
 
 // READ USER
 const fetchLoggedInUser = async () => {
-  const [response, _err] = await handleFetch('/api/me', { credentials: 'include' });
-  return response;
-};
+  try {
+    const response = await handleFetch('/api/me', { credentials: 'include' });
+
+    return response;
+  } catch(err) {
+    console.error(err);
+  }
+}
 
 // UPDATE USER
 const updateUsernameHandler = async (form) => {
@@ -74,24 +79,8 @@ const setNav = (hasLoggedInUser) => {
   document.querySelector('nav').innerHTML = navHtml;
 };
 
-// This is wonky. Once you learn about bundlers we won't have to
-// explicitly create globals. We just lack the tools right now.
-Object.assign(window, {
-  handleFetch,
-  getFetchOptions,
-  fetchLoggedInUser,
-  signupAndLoginHandler,
-  setNav,
-  logOutHandler,
-  updateUsernameHandler,
-});
-
-export {
-  handleFetch,
-  getFetchOptions,
-  fetchLoggedInUser,
-  signupAndLoginHandler,
-  setNav,
-  logOutHandler,
-  updateUsernameHandler,
-};
+//removed the following due to the fact that the browser cant support type module
+/*Why remove the `type="module"` and export/import:
+- It was breaking some css
+- In order to use the helper functions we can just add the script file to the html files
+*/

@@ -1,13 +1,6 @@
-/* eslint-disable import/extensions */
-import {
-  fetchLoggedInUser,
-  logOutHandler,
-  updateUsernameHandler,
-  setNav,
-} from './global.js';
 
 const isAuthError = (err) => (err.status === 401 || err.status === 403);
-const redirectToLogin = () => window.location.assign('/login.html');
+const redirectToLogin = () => window.location.assign('/sign-in.html');
 const renderUsername = (username) => {
   document.querySelector('#username').textContent = username;
 };
